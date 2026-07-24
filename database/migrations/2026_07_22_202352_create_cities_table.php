@@ -16,10 +16,10 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->string('name', 100);
-            $table->boolean('status')->default(true);
-            $table->timestamps();
 
-            $table->unique(['state_id', 'name']);
+            $table->boolean('status')->default(true);
+
+            $table->timestamps();
         });
     }
 
