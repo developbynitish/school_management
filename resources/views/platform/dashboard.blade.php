@@ -1,34 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
     <title>Platform Dashboard</title>
+
+    @vite([
+        'resources/css/app.css',
+        'resources/css/global.css'
+    ])
 
 </head>
 
 <body>
 
     <h1>
-        Welcome,
-        {{ auth('platform')->user()->first_name }}
-        {{ auth('platform')->user()->last_name }}
+        Welcome to Platform Dashboard
     </h1>
 
     <p>
-        You are logged in to the Platform Portal.
-    </p>
-
-    <p>
-        Role:
-        {{ auth('platform')->user()->role->name }}
+        Logged in as:
+        {{ auth('platform')->user()->email }}
     </p>
 
     <form

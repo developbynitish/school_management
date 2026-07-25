@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Platform\AuthController;
+use App\Http\Controllers\Platform\Auth\PlatformLoginController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,3 +49,42 @@ Route::prefix('superadmin')
 
             });
     });
+
+Route::prefix('superadmin')->name('platform.')->group(function () {
+
+    // Login
+    Route::get(
+        '/login',
+        [PlatformLoginController::class, 'showLoginForm']
+    )->name('login');
+
+    Route::post(
+        '/login',
+        [PlatformLoginController::class, 'login']
+    )->name('login.submit');
+
+    Route::post(
+        '/forgot-password',
+        [PlatformForgotPasswordController::class, 'sendResetLink']
+    )->name('password.email');
+
+
+    // Authenticated Platform Routes
+    Route::middleware('auth:platform')->group(function () {
+
+        Route::get(
+            '/dashboard',
+            function () {
+                return view('platform.dashboard');
+            }
+        )->name('dashboard');
+
+
+        Route::post(
+            '/logout',
+            [PlatformLoginController::class, 'logout']
+        )->name('logout');
+
+    });
+
+});

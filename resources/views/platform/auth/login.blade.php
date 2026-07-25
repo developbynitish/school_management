@@ -5,164 +5,274 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
 
-    <title>Platform Login</title>
+    <title>
+        Platform Login
+    </title>
 
-    <style>
+    <link rel="stylesheet"
+      href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
 
-        * {
-            box-sizing: border-box;
-        }
+    @vite([
+        'resources/css/app.css',
+        'resources/css/global.css',
+        'resources/js/app.js',
+        'resources/js/platform/login.js'
+    ])
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .login-container {
-            width: 400px;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-        }
-
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        .error {
-            color: red;
-            margin-bottom: 15px;
-        }
-
-    </style>
 
 </head>
 
-<body>
+<body class="platform-login-page">
 
-<div class="login-container">
+    <div class="platform-login-card-wrapper">
 
-    <h2>Platform Login</h2>
+    <div class="platform-login-card-inner">
 
-    @if ($errors->any())
+        {{-- =========================
+             LOGIN SIDE
+        ========================== --}}
 
-        <div class="error">
+        <div class="platform-login-card-face platform-login-front">
 
-            @foreach ($errors->all() as $error)
+            <div class="platform-login-header">
 
-                <div>
-                    {{ $error }}
+                <div class="platform-logo">
+                    <i class="fas fa-school"></i>
                 </div>
 
-            @endforeach
+                <h1 class="platform-title">
+                    School Management
+                </h1>
 
-        </div>
+                <div class="platform-subtitle">
+                    Platform Administration Portal
+                </div>
 
-    @endif
+            </div>
 
-    <form
-        method="POST"
-        action="{{ route('platform.login.submit') }}"
-    >
 
-        @csrf
+            <div class="platform-login-body">
 
-        <div class="form-group">
+                @if ($errors->any())
 
-            <label>
-                Email
-            </label>
+                    <div class="alert platform-alert mb-4">
 
-            <input
-                type="email"
-                name="email"
-                value="{{ old('email') }}"
-                required
-                autofocus
-            >
+                        <div class="d-flex align-items-start">
 
-        </div>
+                            <i class="fas fa-exclamation-circle mr-2 mt-1"></i>
 
-        <div class="form-group">
+                            <div>
 
-            <label>
-                Password
-            </label>
+                                @foreach ($errors->all() as $error)
 
-            <input
-                type="password"
-                name="password"
-                required
-            >
+                                    <div>
+                                        {{ $error }}
+                                    </div>
 
-        </div>
+                                @endforeach
 
-        <div class="form-group">
+                            </div>
 
-            <label>
+                        </div>
 
-                <input
-                    type="checkbox"
-                    name="remember"
-                    value="1"
+                    </div>
+
+                @endif
+
+
+                {{-- Login Form --}}
+
+                <form
+                    method="POST"
+                    id="platformLoginForm"
+                    action="{{ route('platform.login.submit') }}"
                 >
 
-                Remember Me
+                    @csrf
 
-            </label>
+
+                    {{-- Email --}}
+
+                    <div class="platform-input-group">
+
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control platform-input"
+                            placeholder="Email address"
+                            value="{{ old('email') }}"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+
+                    {{-- Password --}}
+
+                    <div class="platform-input-group">
+
+
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-control platform-input"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                        >
+
+                    </div>
+
+
+                    {{-- Remember Me --}}
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+
+                        <div class="icheck-primary">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                                name="remember"
+                                value="1"
+                            >
+
+                            <label for="remember">
+                                Remember Me
+                            </label>
+
+                        </div>
+
+
+                        {{-- Forgot Password --}}
+
+                        <a
+                            href="javascript:void(0)"
+                            id="showForgotPassword"
+                            class="forgot-password-link"
+                        >
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn platform-login-button"
+                    >
+
+                        <i class="fas fa-sign-in-alt mr-2"></i>
+
+                        Login
+
+                    </button>
+
+                </form>
+
+            </div>
 
         </div>
 
-        <button type="submit">
-            Login
-        </button>
 
-    </form>
+        {{-- =========================
+             FORGOT PASSWORD SIDE
+        ========================== --}}
+
+        <div class="platform-login-card-face platform-login-back">
+
+            <div class="platform-login-header">
+
+                <div class="platform-logo">
+
+                    <i class="fas fa-key"></i>
+
+                </div>
+
+                <h1 class="platform-title">
+                    Forgot Password?
+                </h1>
+
+                <div class="platform-subtitle">
+
+                    Enter your email to receive a
+                    password reset link.
+
+                </div>
+
+            </div>
+
+
+            <div class="platform-login-body">
+
+
+                {{-- Forgot Password Form --}}
+
+                <form
+                    method="POST"
+                    id="platformForgotPasswordForm"
+                    action="{{ route('platform.password.email') }}"
+                >
+
+                    @csrf
+
+
+                    <div class="platform-input-group">
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control platform-input"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn platform-login-button mb-3"
+                    >
+
+                        <i class="fas fa-paper-plane mr-2"></i>
+
+                        Send Reset Link
+
+                    </button>
+
+
+                    <div class="text-center">
+
+                        <a
+                            href="javascript:void(0)"
+                            id="showLogin"
+                            class="forgot-password-link"
+                        >
+
+                            <i class="fas fa-arrow-left mr-1"></i>
+
+                            Back to Login
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 </body>
+
+
 
 </html>

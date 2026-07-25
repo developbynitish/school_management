@@ -1,0 +1,440 @@
+.validation-error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+.login-box-msg{
+    background-color: #6b8aa7;
+    padding: 2%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #6b8aa7;
+}
+
+/* =========================================
+   PLATFORM LOGIN
+========================================= */
+
+.platform-login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(99, 102, 241, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(139, 92, 246, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e1b4b 50%,
+            #312e81 100%
+        );
+
+    padding: 30px 15px;
+}
+
+
+/* Login Box */
+
+.platform-login-box {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* Login Card */
+
+.platform-login-card {
+    border: 0 !important;
+    border-radius: 20px !important;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+
+/* Header */
+
+.platform-login-header {
+    text-align: center;
+    padding: 35px 30px 25px;
+}
+
+
+/* Logo */
+
+.platform-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.35);
+}
+
+
+/* Title */
+
+.platform-title {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* Subtitle */
+
+.platform-subtitle {
+    margin-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* Card Body */
+
+.platform-login-body {
+    padding: 10px 35px 35px;
+}
+
+
+/* Input Group */
+
+.platform-input-group {
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+
+/* Input */
+
+.platform-input {
+    height: 52px;
+
+    border-radius: 12px !important;
+
+    border: 1px solid #d1d5db !important;
+
+    font-size: 15px;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Input Focus */
+
+.platform-input:focus {
+    border-color: #6366f1 !important;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12) !important;
+}
+
+
+/* Input Icon */
+
+.platform-input-icon {
+    position: absolute;
+
+    left: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    color: #6366f1;
+
+    font-size: 16px;
+}
+
+
+/* Remember */
+
+.platform-remember {
+    color: #4b5563;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* Login Button */
+
+.platform-login-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: 0 !important;
+
+    border-radius: 12px !important;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        ) !important;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.3);
+
+    transition: all 0.25s ease;
+}
+
+
+/* Button Hover */
+
+.platform-login-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.4);
+}
+
+
+/* Validation Error */
+
+.validation-error {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* Invalid Input */
+
+.platform-input.is-invalid {
+    border-color: #dc2626 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.08) !important;
+}
+
+
+/* Server Error */
+
+.platform-alert {
+    border: 0;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    background: #cd1b17;
+
+    color: #ffffff;
+
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .platform-login-page {
+        padding: 20px 15px;
+    }
+
+    .platform-login-body {
+        padding: 10px 25px 30px;
+    }
+
+    .platform-login-header {
+        padding: 30px 20px 20px;
+    }
+
+    .platform-title {
+        font-size: 24px;
+    }
+
+}
+
+
+/* =========================================
+   LOGIN FLIP CARD
+========================================= */
+
+.platform-login-card-wrapper {
+    width: 100%;
+    max-width: 430px;
+
+    perspective: 1200px;
+}
+
+
+/* Inner Card */
+
+.platform-login-card-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    transition:
+        transform 0.7s cubic-bezier(
+            0.4,
+            0.2,
+            0.2,
+            1
+        );
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* Flip */
+
+.platform-login-card-wrapper.is-flipped
+.platform-login-card-inner {
+
+    transform: rotateY(180deg);
+
+}
+
+
+/* Front + Back */
+
+.platform-login-card-face {
+
+    width: 100%;
+
+    border-radius: 20px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.96
+    );
+
+    box-shadow:
+        0 25px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+
+}
+
+
+/* Front */
+
+.platform-login-front {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* Back */
+
+.platform-login-back {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    transform: rotateY(180deg);
+
+}
+
+
+/* Forgot Password Link */
+
+.forgot-password-link {
+
+    color: #6366f1;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.forgot-password-link:hover {
+
+    color: #4f46e5;
+
+    text-decoration: none;
+
+}
