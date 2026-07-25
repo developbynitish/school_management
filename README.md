@@ -18,9 +18,9 @@ The system supports role-based access and provides separate functionality based 
 - Parent
 
 The technology we used for this project
-PHP 8.3
-Laravel 12
-Postgresql
-NPM
-Node Js
-Admin LTE bootstrap theme
+- PHP 8.3
+- Laravel 12
+- Postgresql
+- NPM
+- Node Js
+- Admin LTE bootstrap theme
