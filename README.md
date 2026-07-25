@@ -10,9 +10,17 @@ The School Management System helps schools manage their academic and administrat
 
 The system supports role-based access and provides separate functionality based on the user's permissions.
 
-- Main Users
-- Admin
+- Platform Admin & User
+- School Admin
 - Teacher
 - Staff
 - Student
 - Parent
+
+The technology we used for this project
+PHP 8.3
+Laravel 12
+Postgresql
+NPM
+Node Js
+Admin LTE bootstrap theme
