@@ -34,18 +34,31 @@ Route::prefix('superadmin')
             ->group(function () {
 
                 Route::get(
-                    '/dashboard',
-                    function () {
-                        return view(
-                            'platform.dashboard'
-                        );
-                    }
-                )->name('dashboard');
+                '/dashboard',
+                function () {
+                    return view('platform.dashboard');
+                }
+            )->name('dashboard');
 
                 Route::post(
                     '/logout',
                     [AuthController::class, 'logout']
                 )->name('logout');
+
+                Route::get(
+            '/schools',
+            function () {
+                return 'All Schools';
+            }
+        )->name('schools.index');
+
+
+        Route::get(
+            '/schools/create',
+            function () {
+                return 'Add School';
+            }
+        )->name('schools.create');
 
             });
     });
