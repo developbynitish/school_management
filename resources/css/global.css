@@ -1,3 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Global Variables
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    --platform-primary: #0d6efd;
+    --platform-sidebar: #212529;
+    --platform-sidebar-hover: #343a40;
+    --platform-sidebar-active: #0d6efd;
+    --platform-text: #212529;
+    --platform-muted: #6c757d;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: var(--platform-text);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Navbar
+|--------------------------------------------------------------------------
+*/
+
+.app-header {
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar
+|--------------------------------------------------------------------------
+*/
+
+.app-sidebar {
+    background: var(--platform-sidebar);
+}
+
+.app-sidebar .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.app-sidebar .nav-link p {
+    font-size: 14px;
+}
+
+.app-sidebar .nav-icon {
+    font-size: 15px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar Active
+|--------------------------------------------------------------------------
+*/
+
+.app-sidebar .nav-link.active {
+    background-color: var(--platform-sidebar-active);
+    color: #fff;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Content
+|--------------------------------------------------------------------------
+*/
+
+.app-main {
+    background-color: #f4f6f9;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Cards
+|--------------------------------------------------------------------------
+*/
+
+.card {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| User Avatar
+|--------------------------------------------------------------------------
+*/
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--platform-primary);
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Dropdown
+|--------------------------------------------------------------------------
+*/
+
+.dropdown-menu {
+    border: 0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 10px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f4f6f9;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+
+.btn {
+    border-radius: 6px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+*/
+
+.app-footer {
+    font-size: 13px;
+    color: var(--platform-muted);
+}
+
 .validation-error {
     display: block;
     background-color: #f8d7da;
