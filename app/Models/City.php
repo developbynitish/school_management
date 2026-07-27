@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class City extends Model
 {
     protected $fillable = [
-        'state_id',
+        'id',
         'name',
         'status',
     ];
 
-    public function state(): BelongsTo
+    public function city(): BelongsTo
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(City::class);
     }
 }

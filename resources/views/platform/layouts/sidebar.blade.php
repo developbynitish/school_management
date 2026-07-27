@@ -332,13 +332,19 @@
                 {{-- ================================================= --}}
                 {{-- LOCATIONS --}}
                 {{-- ================================================= --}}
-
-                <li class="nav-item">
+                @php
+                    $locationMenuOpen = request()->routeIs(
+                        'platform.countries.*',
+                        'platform.states.*',
+                        'platform.cities.*'
+                    );
+                @endphp
+                <li class="nav-item {{ $locationMenuOpen ? 'menu-open' : '' }}"">
 
 
                     <a
                         href="#"
-                        class="nav-link"
+                        class="nav-link {{ $locationMenuOpen ? 'active' : '' }}"
                     >
 
                         <i class="nav-icon fas fa-map-marker-alt"></i>
@@ -357,11 +363,11 @@
                     <ul class="nav nav-treeview">
 
 
-                        <li class="nav-item">
+                        <li class="nav-item {{ request()->routeIs('platform.countries.*') ? 'menu-open' : '' }}">
 
                             <a
-                                href="#"
-                                class="nav-link"
+                                href="{{ route('platform.countries.index') }}"
+                                class="nav-link {{ request()->routeIs('platform.countries.*') ? 'active' : '' }}"
                             >
 
                                 <i class="nav-icon far fa-circle"></i>
@@ -380,8 +386,8 @@
                         <li class="nav-item">
 
                             <a
-                                href="#"
-                                class="nav-link"
+                                href="{{ route('platform.states.index') }}"
+                                class="nav-link {{ request()->routeIs('platform.states.*') ? 'active' : '' }}"
                             >
 
                                 <i class="nav-icon far fa-circle"></i>
@@ -400,8 +406,8 @@
                         <li class="nav-item">
 
                             <a
-                                href="#"
-                                class="nav-link"
+                                href="{{ route('platform.cities.index') }}"
+                                class="nav-link {{ request()->routeIs('platform.cities.*') ? 'active' : '' }}"
                             >
 
                                 <i class="nav-icon far fa-circle"></i>
