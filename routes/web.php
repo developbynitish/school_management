@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Platform\AuthController;
 use App\Http\Controllers\Platform\Auth\PlatformLoginController;
+use App\Http\Controllers\Platform\PlatformDashboardController;
+
 
 
 Route::get('/', function () {
@@ -10,9 +12,10 @@ Route::get('/', function () {
 });
 
 // TO GET DASHBOARD
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get(
+    '/dashboard',
+    [PlatformDashboardController::class, 'index']
+)->name('dashboard');
 
 Route::prefix('superadmin')
     ->name('platform.')
@@ -101,3 +104,14 @@ Route::prefix('superadmin')->name('platform.')->group(function () {
     });
 
 });
+
+Route::prefix('superadmin')
+    ->name('platform.')
+    ->group(function () {
+
+        Route::get(
+            '/dashboard',
+            [PlatformDashboardController::class, 'index']
+        )->name('dashboard');
+
+    });
