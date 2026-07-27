@@ -160,7 +160,7 @@
 
                                 <h2 class="mb-0">
 
-                                    120
+                                    {{ $totalSchools }}
 
                                 </h2>
 
@@ -217,7 +217,7 @@
 
                                 <h2 class="mb-0">
 
-                                    112
+                                    {{ $activeSchools }}
 
                                 </h2>
 
@@ -274,7 +274,7 @@
 
                                 <h2 class="mb-0">
 
-                                    8
+                                    {{ $pendingRequest }}
 
                                 </h2>
 
@@ -331,7 +331,7 @@
 
                                 <h2 class="mb-0">
 
-                                    24
+                                    {{$totalemployee}}
 
                                 </h2>
 
